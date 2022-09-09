@@ -1,16 +1,16 @@
 import {useContext} from 'react'
 import {TodoListContext} from "./TodoListContext"
 
-function Filter({todos}) {
+function Filter() {
 
-  const context = useContext(TodoListContext);
+  const [todos] = useContext(TodoListContext)
+ 
 
   return (
     <div>
-      <h1> {context} </h1>
-        <a href="#">All (4)  </a>
-        <a href="#">Completed (3)  </a>
-        <a href="#">Uncompleted (1 )</a>
+        <a href="#">All ({todos.length})  </a>
+        <a href="#">Completed ({todos.filter(x => x.completed).length})  </a>
+        <a href="#">Uncompleted ({todos.filter(x => !x.completed).length})</a>
     </div>
   )
 }

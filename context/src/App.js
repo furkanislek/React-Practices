@@ -1,5 +1,6 @@
 import { Children } from "react";
 import Navbar from "./Navbar";
+import Todoform from "./Todoform";
 import TodoList from "./TodoList";
 import { TodoListProvider } from "./TodoListContext";
 
@@ -9,6 +10,7 @@ function App() {
       <div>
         <Navbar />
         <TodoList />
+        <Todoform />
       </div>
     </TodoListProvider>
   );
